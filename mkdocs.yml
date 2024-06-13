@@ -4,7 +4,7 @@ theme:
     name: material
     favicon: assets/images/favicon.png
     font:
-        text: Roboto Mono
+        text: Roboto
         code: Roboto Mono
     custom_theme: custom_theme/
     palette:
@@ -15,7 +15,7 @@ theme:
           toggle:
               icon: material/toggle-switch-off-outline
               name: Switch to dark mode
-        - media: '(prefers-color-scheme: dark)'
+        - media: '(prefers-color-scheme: light)'
           scheme: slate
           primary: indigo
           accent: indigo
