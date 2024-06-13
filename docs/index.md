@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+# Typescript Challenge Answer
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+###### by Hitomi Yang
 
-## Commands
+這是基於 github 上 type-challenges 的內容做出的 answer blog.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+記錄自己解出來的每個 challenge 內容
 
-## Project layout
+---
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Question Reference
+
+[https://tsch.js.org/](https://tsch.js.org/)
+
+[github](https://github.com/type-challenges/type-challenges)
+

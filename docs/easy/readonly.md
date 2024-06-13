@@ -1,4 +1,6 @@
-# Challenge 0007
+# Challenge 00007
+
+## Readonly`<Type>`
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00007-easy-readonly/README.md) | [Take the Challenge](https://tsch.js.org/7/play)
 
@@ -12,7 +14,7 @@ Constructs a type with all properties of T set to readonly, meaning the properti
 
 這個泛型會構造一個所有屬性都設定為唯讀（readonly）的型別，意思是這個型別的屬性不能被重新賦值。
 
-## For example:
+## 範例:
 
 ```typescript
 // 我們有一個 Todo 的介面：
@@ -21,7 +23,7 @@ interface Todo {
     description: string;
 }
 
-//接著，我們用我們實現的 MyReadonly<Todo> 來創建一個 todo 物件：
+// 接著，我們用我們實現的 MyReadonly<Todo> 來創建一個 todo 物件：
 const todo: MyReadonly<Todo> = {
     title: 'Hey',
     description: 'foobar',
@@ -66,5 +68,5 @@ type MyReadonly<T> = {
 3. readonly 關鍵字將每個屬性設為唯讀。
 4. T[P] 表示每個屬性的型別。
 
-這樣，我們就完成了一個與內建 Readonly<T> 相同功能的型別。
+這樣，我們就完成了一個與內建 `Readonly<T>` 相同功能的型別。
 

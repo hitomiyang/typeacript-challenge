@@ -1,29 +1,52 @@
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
-### Windows template
-# Windows thumbnail cache files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Dump file
-*.stackdump
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
 
-# Folder config file
-[Dd]esktop.ini
+# testing
+/coverage
+*.lcov
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# next.js
+/.next/
+/build
+/out/
 
-### macOS template
-# General
+# yarn
+/.yarn
+
+# misc
 .DS_Store
-.AppleDouble
-.LSOverride
+*.pem
 
-# Thumbnails
-._*
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# eslint cache
+.eslintcache
+
+#webstorm
+/.idea
+
+# Sentry Auth Token
+.sentryclirc
