@@ -80,3 +80,32 @@ readonly any[] 允許 T 是只讀的元組，也允許 T 是可變的陣列或�
 
 這樣，我們就完成了一個可以返回任意元組長度的泛型型別 `Length<T>`。
 
+---
+
+### 補充說明
+
+需要使用 readonly 的原因是要讓 typescript 分辨他是 tuple or array：
+
+```typescript
+const tesla = ['tesla', 'model 3', 'model X', 'model Y'];
+const spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT'];
+
+const Result = spaceX['length']; // number
+```
+
+這題定義了 tesla 及 spaceX 是 type，但在通常的使用邏輯上，我們會把這兩個 type 定義為 const。
+
+但如果單純是這樣的寫法，下面的 Result 會以為你要找的是上面這兩個 const 內 length 的 type，所以會給出 number，而不會給出我們期望的 array.length 數字。
+這是因為在這種寫法之下，typescript 會覺得 tesla 及 spaceX 只是兩個普通的 array，而不會覺得他們是 tuple。
+
+想要讓 TS 清楚知道這兩個 const 是兩個 tuple，必需在後方加上 as const，因為 tuple 是固定 length 也不會變更內容的 array。
+
+```typescript
+const tesla = ['tesla', 'model 3', 'model X', 'model Y'] as const;
+const spaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT'] as const;
+
+const Result = spaceX['length']; // 5
+```
+
+如此一來，typescript 才能辨識這兩個 const 是 tuple，我們的 result 才會得出 tuple.length 的值。
+
