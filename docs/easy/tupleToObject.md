@@ -10,7 +10,7 @@ Given an array, transform it into an object type and the key/value must be in th
 
 這題目要求我們將一個陣列轉換為一個物件型別，並且物件的鍵和值必須是來自這個陣列中的元素。
 
-## 範例:
+## 範例
 
 ```typescript
 // 我們有一個陣列：

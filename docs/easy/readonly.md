@@ -14,7 +14,7 @@ Constructs a type with all properties of T set to readonly, meaning the properti
 
 這個泛型會構造一個所有屬性都設定為唯讀（readonly）的型別，意思是這個型別的屬性不能被重新賦值。
 
-## 範例:
+## 範例
 
 ```typescript
 // 我們有一個 Todo 的介面：

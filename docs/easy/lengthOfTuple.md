@@ -10,7 +10,7 @@ For given a tuple, you need create a generic Length, pick the length of the tupl
 
 這題目要求我們實現一個泛型 `Length<T>`，這個泛型會接收一個 tuple，並返回這個 tuple 的長度。
 
-## 範例:
+## 範例
 
 ```typescript
 // 我們有以下兩個tuple：
