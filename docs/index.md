@@ -12,22 +12,27 @@ cheers!
 
 ## Challenge Reference
 
--   [Challenge Website](https://tsch.js.org/)
+<div class="grid cards" markdown>
 
--   [Github](https://github.com/type-challenges/type-challenges)
+-   :fontawesome-solid-up-right-from-square: [Challenge Website](https://tsch.js.org/)
+
+-   :fontawesome-brands-github: [Github](https://github.com/type-challenges/type-challenges)
+
+</div>
 
 ---
 
 ## About Me
 
-Hitomi Yang
+<div class="grid cards" markdown>
 
--   [Facebook](https://www.facebook.com/Hitomi.yang)
+-   #### Hitomi Yang
 
--   [LinkedIn](https://www.linkedin.com/in/hitomi-yang/)
+    ***
 
-<!-- <div class="tableLayout">
-    <div><a href="https://tsch.js.org/">Challenge Website</a></div>
-    <div><a href="https://github.com/type-challenges/type-challenges">Github</a></div>
-</div> -->
+    :fontawesome-brands-square-facebook: [Facebook](https://www.facebook.com/Hitomi.yang)
+
+    :fontawesome-brands-linkedin: [LinkedIn](https://www.linkedin.com/in/hitomi-yang/)
+
+</div>
 
