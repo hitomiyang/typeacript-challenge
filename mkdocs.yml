@@ -1,29 +1,48 @@
-site_name: TypeScript Challenge Answer
+site_name: TypeChallenge Note
+site_url: https://typescript-challenge.zeabur.app/
 
 theme:
+    palette:
+        - media: '(prefers-color-scheme: light)'
+          scheme: default
+          primary: pink
+          accent: cyan
+          toggle:
+              icon: material/toggle-switch-off-outline
+              name: Switch to dark mode
+        - media: '(prefers-color-scheme: dark)'
+          scheme: slate
+          primary: pink
+          accent: cyan
+          toggle:
+              icon: material/toggle-switch
+              name: Switch to light mode
     name: material
     favicon: assets/images/favicon.png
     font:
         text: Roboto
         code: Roboto Mono
+
     custom_theme: custom_theme/
-    palette:
-        - media: '(prefers-color-scheme: light)'
-          scheme: default
-          primary: indigo
-          accent: indigo
-          toggle:
-              icon: material/toggle-switch-off-outline
-              name: Switch to dark mode
-        - media: '(prefers-color-scheme: light)'
-          scheme: slate
-          primary: indigo
-          accent: indigo
-          toggle:
-              icon: material/toggle-switch
-              name: Switch to light mode
+
     features:
         - content.code.copy
+
+        # 自動展開左邊導航列
+        - navigation.expand
+
+extra:
+    social:
+        - icon: fontawesome/solid/link
+          link: https://hitomiyang.github.io
+          name: Hitomi Yang
+        - icon: fontawesome/brands/facebook
+          link: https://www.facebook.com/Hitomi.yang
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/in/hitomi-yang/
+
+    # generator: false
+#copyright: Copyright &copy; 2024 Hitomi Yang
 
 markdown_extensions:
     #  - smarty
@@ -57,14 +76,11 @@ markdown_extensions:
           base_path:
               - ./docs
           check_paths: true
-    # - pymdownx.emoji:
-    #     emoji_generator: !!python/name:materialx.emoji.to_svg
-    #     emoji_index: !!python/name:materialx.emoji.twemoji
     - pymdownx.tabbed:
           alternate_style: true
     - attr_list
 nav:
-    - Home: index.md
+    - About: index.md
     - Easy:
           - Pick: easy/pick.md
           - Readonly: easy/readonly.md

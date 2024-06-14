@@ -1,16 +1,16 @@
 # Challenge 00004
 
-## Pick`<Type, Keys>`
+`Pick<Type, Keys>`
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00004-easy-pick/README.md) | [Take the Challenge](https://tsch.js.org/4/play)
 
 ## 題目
 
-Implement the built-in Pick<T, K> generic without using it.
+Implement the built-in `Pick<T, K>` generic without using it.
 
 Constructs a type by picking the set of properties K from T
 
-這題目要求我們實現內建的 Pick<T, K> 泛型，但不能直接使用內建的 Pick<T, K>。這個泛型會從型別 T 中挑選出屬性集合 K，構造出一個新的型別。
+這題目要求我們實現內建的 `Pick<T, K>` 泛型，但不能直接使用內建的 `Pick<T, K>`。這個泛型會從型別 T 中挑選出屬性集合 K，構造出一個新的型別。
 
 ## 範例
 
@@ -58,24 +58,24 @@ type MyPick<T, K extends keyof T> = {
 
 1. 我們創建一個新的 Type 叫做 MyPick，這是一個泛型型別，接收兩個參數：T 和 K。
 
-2. K extends keyof T 是我們約束 K 必須是 T 的屬性鍵的子集合。
+2. `K extends keyof T` 是我們約束 K 必須是 T 的屬性鍵的子集合。
 
-3. 在這個例子中，可以得出 K = {'title' | 'completed'}
+3. 在這個例子中，可以得出 `K = {'title' | 'completed'}`
 
-4. {[P in K]: T[P];} 這段可以理解為：在新型別中，[P in K] 是屬性鍵，而 T[P] 則是這個屬性鍵的型別。
+4. `{[P in K]: T[P];}` 這段可以理解為：在新型別中，`[P in K]` 是屬性鍵，而 `T[P]` 則是這個屬性鍵的型別。
 
-5. [P in K] 這部份表示我們用 P 去遍歷 K，P 是一個臨時變數，依次取出 K 中的值。
+5. `[P in K]` 這部份表示我們用 P 去遍歷 K，P 是一個臨時變數，依次取出 K 中的值。
 
-6. T[P] 代表 T 中屬性 P 的型別：
+6. `T[P]` 代表 T 中屬性 P 的型別：
 
-    - 當 P 等於 'title' 時，T['title'] 是 string。
-    - 當 P 等於 'completed' 時，T['completed'] 是 boolean。
+    - 當 P 等於 'title' 時，`T['title']` 是 string。
+    - 當 P 等於 'completed' 時，`T['completed']` 是 boolean。
 
 7. 這個新的型別包含 K 中的屬性鍵以及它們在 T 中對應的型別。
 
 8. 所以，這個新的型別 MyPick`<Todo, 'title' | 'completed'>` 將會是：
 
-    ```
+    ```javascript
     {
         'title': string,
         'completed': boolean

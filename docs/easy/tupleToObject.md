@@ -1,6 +1,6 @@
 # Challenge 00011
 
-## Length`<T>`
+`TupleToObject<T>`
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00011-easy-tuple-to-object/README.md) | [Take the Challenge](https://tsch.js.org/11/play)
 
@@ -50,13 +50,13 @@ type TupleToObject<T extends readonly any[]> = {
 
 在這段代碼中：
 
-我們使用 readonly any[] 作為泛型 T 的約束條件。
+我們使用 `readonly any[]` 作為泛型 T 的約束條件。
 
-1. T extends readonly any[]：這表示 T 必須是一個只讀陣列。
+1. `T extends readonly any[]`：這表示 T 必須是一個只讀陣列。
 
-2. T[number]：這會取得陣列 T 中所有元素的聯合類型。
-    - 比如，對於 ['tesla', 'model 3', 'model X', 'model Y']，T[number] 會是 'tesla' | 'model 3' | 'model X' | 'model Y'。
-3. [K in T[number]]：這表示我們遍歷 T 中的每個元素 K，並將其作為新物件的鍵和值。
+2. `T[number]`：這會取得陣列 T 中所有元素的聯合類型。
+    - 比如，對於 `['tesla', 'model 3', 'model X', 'model Y']`，`T[number]` 會是 `'tesla' | 'model 3' | 'model X' | 'model Y'`。
+3. `[K in T[number]]`：這表示我們遍歷 T 中的每個元素 K，並將其作為新物件的鍵和值。
 
 在這個範例中，`TupleToObject<typeof tuple>` 會將 tuple 中的每個元素轉換為物件的鍵和值。
 
@@ -74,7 +74,7 @@ const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;
 
 -   沒有 as const 的情況
 
-    如果我們不使用 as const，則 tuple 的類型會被推斷為 string[]，這意味著所有元素都會被認為是 string 類型，而不是具體的字面量類型。
+    如果我們不使用 as const，則 tuple 的類型會被推斷為 `string[]`，這意味著所有元素都會被認為是 string 類型，而不是具體的字面量類型。
 
     ```typescript
     const tuple = ['tesla', 'model 3', 'model X', 'model Y'];
@@ -90,7 +90,7 @@ const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;
     // 這裡 tuple 的類型會是 readonly ['tesla', 'model 3', 'model X', 'model Y']
     ```
 
-    這樣，tuple 中的每個元素都會被視為具體的字面量類型 'tesla' | 'model 3' | 'model X' | 'model Y'。
+    這樣，tuple 中的每個元素都會被視為具體的字面量類型 `'tesla' | 'model 3' | 'model X' | 'model Y'`。
 
 -   實現 TupleToObject 的原因
 

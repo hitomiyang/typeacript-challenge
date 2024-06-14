@@ -1,3 +1,17 @@
 .mermaid {
     text-align: center;
 }
+
+.tableLayout {
+    display: flex;
+    width: 100%;
+    margin: -10px;
+}
+.tableLayout > div {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 10px;
+    border: 1px solid #efefef;
+}
+.tableLayout > div:last-child {
+}

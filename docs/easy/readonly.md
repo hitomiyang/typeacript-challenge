@@ -1,16 +1,16 @@
 # Challenge 00007
 
-## Readonly`<Type>`
+`Readonly<Type>`
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00007-easy-readonly/README.md) | [Take the Challenge](https://tsch.js.org/7/play)
 
 ## 題目
 
-Implement the built-in Readonly<T> generic without using it.
+Implement the built-in `Readonly<T>` generic without using it.
 
 Constructs a type with all properties of T set to readonly, meaning the properties of the constructed type cannot be reassigned.
 
-這題的要求是讓我們實現內建的 Readonly<T> 泛型，但不能直接使用內建的 Readonly<T>。
+這題的要求是讓我們實現內建的 `Readonly<T>` 泛型，但不能直接使用內建的 `Readonly<T>`。
 
 這個泛型會構造一個所有屬性都設定為唯讀（readonly）的型別，意思是這個型別的屬性不能被重新賦值。
 
@@ -61,12 +61,12 @@ type MyReadonly<T> = {
 
 1. keyof T 會產生 T 的所有屬性名稱的聯合型別（子集合）。
     - keyof 是用來取得某個型別的所有屬性鍵，並返回這些鍵組成的聯合型別。
-      例如，對於 interface Todo { title: string; description: string; }，keyof Todo 會產生聯合型別 "title" | "description"。
-2. [P in keyof T] 是在迭代 T 的所有屬性。
+      例如，對於 `interface Todo { title: string; description: string; }`，`keyof Todo` 會產生聯合型別 `"title" | "description"`。
+2. `[P in keyof T]` 是在迭代 T 的所有屬性。
     - in 關鍵字用來遍歷某個型別的所有屬性。
-      在這個例子中，我們使用 [P in keyof T] 來遍歷型別 T 的所有屬性，P 代表每一個屬性鍵。
-3. readonly 關鍵字將每個屬性設為唯讀。
-4. T[P] 表示每個屬性的型別。
+      在這個例子中，我們使用 `[P in keyof T]` 來遍歷型別 T 的所有屬性，P 代表每一個屬性鍵。
+3. `readonly` 關鍵字將每個屬性設為唯讀。
+4. `T[P]` 表示每個屬性的型別。
 
 這樣，我們就完成了一個與內建 `Readonly<T>` 相同功能的型別。
 
