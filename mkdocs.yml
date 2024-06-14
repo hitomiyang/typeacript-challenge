@@ -68,6 +68,7 @@ nav:
     - Easy:
           - Pick: easy/pick.md
           - Readonly: easy/readonly.md
+          - Tuple to Object: easy/tupleToObject.md
           - Length of Tuple: easy/lengthOfTuple.md
 extra_css: [assets/css/extra.css]
 
