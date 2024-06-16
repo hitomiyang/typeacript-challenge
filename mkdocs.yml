@@ -90,5 +90,6 @@ nav:
           - Readonly: easy/readonly.md
           - Tuple to Object: easy/tupleToObject.md
           - Length of Tuple: easy/lengthOfTuple.md
+          - Exclude: easy/exclude.md
 extra_css: [assets/css/extra.css]
 

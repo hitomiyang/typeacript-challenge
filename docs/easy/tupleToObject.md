@@ -29,12 +29,12 @@ type result = TupleToObject<typeof tuple>;
 
 1. 字面量類型推斷（Literal Type Inference）：
 
-    - 我們使用 as const 來讓 TypeScript 推斷出一個陣列的字面量類型。
+    - 我們使用 `as const` 來讓 TypeScript 推斷出一個陣列的字面量類型。
 
 2. 泛型（Generics）：
 
     - 泛型允許我們定義在多個型別上都能運行的函式或類別。
-    - 在這裡，我們會用 T 作為泛型參數，代表我們要處理的陣列。
+    - 在這裡，我們會用 `T` 作為泛型參數，代表我們要處理的陣列。
 
 3. 映射型別（Mapped Types）：
     - 這是 TypeScript 的一個強大特性，可以用來創建一個基於另一個型別的新型別，並對其進行變換。
@@ -50,13 +50,13 @@ type TupleToObject<T extends readonly any[]> = {
 
 在這段代碼中：
 
-我們使用 `readonly any[]` 作為泛型 T 的約束條件。
+我們使用 `readonly any[]` 作為泛型 `T` 的約束條件。
 
-1. `T extends readonly any[]`：這表示 T 必須是一個只讀陣列。
+1. `T extends readonly any[]`：這表示 `T` 必須是一個只讀陣列。
 
-2. `T[number]`：這會取得陣列 T 中所有元素的聯合類型。
+2. `T[number]`：這會取得陣列 `T` 中所有元素的聯合類型。
     - 比如，對於 `['tesla', 'model 3', 'model X', 'model Y']`，`T[number]` 會是 `'tesla' | 'model 3' | 'model X' | 'model Y'`。
-3. `[K in T[number]]`：這表示我們遍歷 T 中的每個元素 K，並將其作為新物件的鍵和值。
+3. `[K in T[number]]`：這表示我們遍歷 `T` 中的每個元素 `K`，並將其作為新物件的鍵和值。
 
 在這個範例中，`TupleToObject<typeof tuple>` 會將 tuple 中的每個元素轉換為物件的鍵和值。
 
@@ -70,20 +70,20 @@ type TupleToObject<T extends readonly any[]> = {
 const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;
 ```
 
-這裡的 as const 是關鍵所在。as const 讓 TypeScript 將 tuple 推斷為一個只讀的元組，且其元素的類型是字面量類型。
+這裡的 `as const` 是關鍵所在。`as const` 讓 TypeScript 將 tuple 推斷為一個只讀的元組，且其元素的類型是字面量類型。
 
--   沒有 as const 的情況
+-   沒有 `as const` 的情況
 
-    如果我們不使用 as const，則 tuple 的類型會被推斷為 `string[]`，這意味著所有元素都會被認為是 string 類型，而不是具體的字面量類型。
+    如果我們不使用 `as const`，則 tuple 的類型會被推斷為 `string[]`，這意味著所有元素都會被認為是 string 類型，而不是具體的字面量類型。
 
     ```typescript
     const tuple = ['tesla', 'model 3', 'model X', 'model Y'];
     // 這裡 tuple 的類型會是 string[]
     ```
 
--   使用 as const 的情況
+-   使用 `as const` 的情況
 
-    使用 as const 之後，tuple 的類型會被推斷為以下形式：
+    使用 `as const` 之後，tuple 的類型會被推斷為以下形式：
 
     ```typescript
     const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;

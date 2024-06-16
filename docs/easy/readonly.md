@@ -43,11 +43,11 @@ todo.description = 'barFoo'; // Error: cannot reassign a readonly property
 1. 泛型（Generics）：
 
     - 泛型允許我們定義在多個型別上都能運行的函式或類別。
-    - 在這裡，T 是一個泛型參數，表示我們要處理的型別。
+    - 在這裡，`T` 是一個泛型參數，表示我們要處理的型別。
 
 2. 映射型別（Mapped Types）：
     - 映射型別讓我們可以創建一個基於另一個型別的新型別，並對其進行某種變換。
-    - 映射型別使用 in 關鍵字來迭代型別的屬性。
+    - 映射型別使用 `in` 關鍵字來迭代型別的屬性。
 
 ## 解答
 
@@ -59,12 +59,12 @@ type MyReadonly<T> = {
 
 在這段代碼中：
 
-1. keyof T 會產生 T 的所有屬性名稱的聯合型別（子集合）。
-    - keyof 是用來取得某個型別的所有屬性鍵，並返回這些鍵組成的聯合型別。
+1. `keyof T` 會產生 `T` 的所有屬性名稱的聯合型別（子集合）。
+    - `keyof` 是用來取得某個型別的所有屬性鍵，並返回這些鍵組成的聯合型別。
       例如，對於 `interface Todo { title: string; description: string; }`，`keyof Todo` 會產生聯合型別 `"title" | "description"`。
-2. `[P in keyof T]` 是在迭代 T 的所有屬性。
-    - in 關鍵字用來遍歷某個型別的所有屬性。
-      在這個例子中，我們使用 `[P in keyof T]` 來遍歷型別 T 的所有屬性，P 代表每一個屬性鍵。
+2. `[P in keyof T]` 是在迭代 `T` 的所有屬性。
+    - `in` 關鍵字用來遍歷某個型別的所有屬性。
+      在這個例子中，我們使用 `[P in keyof T]` 來遍歷型別 `T` 的所有屬性，`P` 代表每一個屬性鍵。
 3. `readonly` 關鍵字將每個屬性設為唯讀。
 4. `T[P]` 表示每個屬性的型別。
 
