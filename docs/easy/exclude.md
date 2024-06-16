@@ -15,7 +15,6 @@ Implement the built-in `Exclude<T, U>`
 ## 範例
 
 ```typescript
-// 我們有如下的型別：
 type Result = MyExclude<'a' | 'b' | 'c', 'a'>; // 預期結果是 'b' | 'c'
 ```
 
