@@ -1,6 +1,10 @@
 # Challenge 00004
 
-`Pick<Type, Keys>`
+| Property         | Description                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Utility Type** | `Pick<T, K>`                                                                                                        |
+| **Release**      | 2.1                                                                                                                 |
+| **Description**  | Constructs a type by picking the set of properties `Keys` (string literal or union of string literals) from `Type`. |
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00004-easy-pick/README.md) | [Take the Challenge](https://tsch.js.org/4/play)
 
@@ -8,7 +12,7 @@
 
 Implement the built-in `Pick<T, K>` generic without using it.
 
-Constructs a type by picking the set of properties K from T
+Constructs a `type` by picking the set of properties `K` from `T`
 
 這題目要求我們實現內建的 `Pick<T, K>` 泛型，但不能直接使用內建的 `Pick<T, K>`。這個泛型會從型別 `T` 中挑選出屬性集合 `K`，構造出一個新的型別。
 
@@ -56,7 +60,7 @@ type MyPick<T, K extends keyof T> = {
 
 在這段代碼中：
 
-1. 我們創建一個新的 Type 叫做 MyPick，這是一個泛型型別，接收兩個參數：`T` 和 `K`。
+1. 我們創建一個新的 `Type` 叫做 `MyPick`，這是一個泛型型別，接收兩個參數：`T` 和 `K`。
 
 2. `K extends keyof T` 是我們約束 `K` 必須是 `T` 的屬性鍵的子集合。
 

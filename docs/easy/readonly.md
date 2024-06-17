@@ -1,6 +1,10 @@
 # Challenge 00007
 
-`Readonly<Type>`
+| Property         | Description                                                                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Utility Type** | `Readonly<T>`                                                                                                                           |
+| **Release**      | 2.１                                                                                                                                    |
+| **Description**  | Constructs a type with all properties of `Type` set to `readonly`, meaning the properties of the constructed type cannot be reassigned. |
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00007-easy-readonly/README.md) | [Take the Challenge](https://tsch.js.org/7/play)
 
@@ -8,7 +12,7 @@
 
 Implement the built-in `Readonly<T>` generic without using it.
 
-Constructs a type with all properties of T set to readonly, meaning the properties of the constructed type cannot be reassigned.
+Constructs a type with all properties of `T` set to `readonly`, meaning the properties of the constructed type cannot be reassigned.
 
 這題的要求是讓我們實現內建的 `Readonly<T>` 泛型，但不能直接使用內建的 `Readonly<T>`。
 

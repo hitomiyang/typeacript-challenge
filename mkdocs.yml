@@ -92,5 +92,6 @@ nav:
           - First of Array: easy/firstOfArray.md
           - Length of Tuple: easy/lengthOfTuple.md
           - Exclude: easy/exclude.md
+          - Awaited: easy/awaited.md
 extra_css: [assets/css/extra.css]
 

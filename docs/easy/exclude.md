@@ -1,6 +1,10 @@
 # Challenge 00043
 
-`Exclude<T, U>`
+| Property         | Description                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Utility Type** | `Exclude<UnionType, ExcludedMembers>`                                                                       |
+| **Release**      | 2.8                                                                                                         |
+| **Description**  | Constructs a type by excluding from `UnionType` all union members that are assignable to `ExcludedMembers`. |
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00043-easy-exclude/README.md) | [Take the Challenge](https://tsch.js.org/43/play)
 
@@ -8,7 +12,9 @@
 
 Implement the built-in `Exclude<T, U>`
 
-`Exclude from T those types that are assignable to U`
+```
+Exclude from T those types that are assignable to U
+```
 
 這題目要求我們實現內建的 `Exclude<T, U>`，這個泛型的作用是從型別 `T` 中排除那些可以賦值給型別 `U` 的型別。
 
@@ -81,4 +87,19 @@ type Result = MyExclude<'a' | 'b' | 'c', 'a'>;
 ```
 
 這意味著我們從 `T` 中排除了可以賦值給 `U` 的那些成員。
+
+---
+
+#### 補充說明 2
+
+假設我們有以下型別：
+
+```typescript
+type T2 = Exclude<string | number | (() => void), Function>;
+// type T2 = string | number;
+```
+
+在這段代碼是排除聯合類型 `string | number | (() => void)` 中的那些可以賦值給 `Function` 的類型。
+
+由於 `function` 是 `(() => { void })` 的父型，也就是說，任何具體的函數類型都可以賦值給 `Function` ， 所以 `(() => { void })` 符合 `Function` 的條件，所以會被排除。
 
