@@ -49,27 +49,27 @@ type Result = MyAwaited<ExampleType>; // 預期結果是 string
 ## 解答
 
 ```typescript
-type MyAwaited<T> = T extends Promise<infer U> ? U : T;
+// 處理 Promise 及其內含的嵌套 .then()
+type MyAwaited<T> = T extends PromiseLike<infer U> ? MyAwaited<U> : T;
 ```
 
 在這段代碼中：
 
-1. `T extends Promise<infer U>`：
+`PromiseLike<any>` 是 TypeScript 中的一個內建型別，它代表了具有類似 `Promise` 行為的物件，也就是說，這個物件具有 `then` 方法。使用 `PromiseLike<any>` 可以讓我們更通用地處理 `Promise` 及其類似的物件。
+
+1. `T extends PromiseLike<infer U>`：
 
     - 檢查：
 
-        - 這個條件型別用來檢查 `T` 是否符合 `Promise<U>` 的形式。
-        - 並不是單純地檢查 `T` 是否為 `Promise`，而是檢查 `T` 是否可以被賦值給 `Promise<U>`。
+        - 這個條件型別用來檢查 `T` 是否可以被賦值給 `PromiseLike<U>`。
+        - 這裡的 `PromiseLike` 是 TypeScript 內建的泛型型別，代表具有 `then` 方法的物件。
         - 這裡的 `U` 是一個待推斷的型別變數。
-        - 如果是，則推斷出內部型別 `U`。
 
     - 型別推斷：
-        - 如果 `T` 可以被賦值給 `Promise<U>`，則 `infer U` 會啟動型別推斷機制，推斷出 `U` 的具體型別。
-        - 這意味著 `U` 是 `Promise<T>` 的內部型別。
 
-2. `? U : T`：
-    - 如果 `T` 符合 `Promise<U>` 的形式，條件型別的結果就是 `U`。
-    - 如果 `T` 不符合 `Promise<U>` 的形式，條件型別的結果是 `T` 本身。
+        - 如果 `T` 可以被賦值給 `PromiseLike<U>`，則 `infer U` 會啟動型別推斷機制，推斷出 `U` 的具體型別。
+        - 這意味著 `U` 是 `PromiseLike<T>` 的內部型別。
+        - 如果 `T` 是 `PromiseLike`，則推斷出內部型別 `U`，並遞歸應用 `MyAwaited`。
 
 這樣，我們就完成了一個可以從 `Promise` 中提取內部型別的泛型型別 `MyAwaited<T>`。
 
@@ -113,7 +113,11 @@ type Result = MyAwaited<ExampleType>; // 預期結果是 string
 
 ---
 
-#### 補充說明 3
+## 解答 2
+
+```typescript
+
+```
 
 ```typescript
 type A = Awaited<Promise<string>>;
