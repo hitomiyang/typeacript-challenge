@@ -30,6 +30,12 @@ theme:
 
         # 自動展開左邊導航列
         - navigation.expand
+        # 設定錨點追蹤
+        - navigation.tracking
+        - navigation.tabs
+        #- navigation.sections
+        #- toc.follow
+        - toc.integrate
 
 extra:
     social:
@@ -93,5 +99,8 @@ nav:
           - Length of Tuple: easy/lengthOfTuple.md
           - Exclude: easy/exclude.md
           - Awaited: easy/awaited.md
+    - Discuss in Depth:
+          - Infer: discuss-in-depth/infer.md
+          - Promise 相關: discuss-in-depth/promise.md
 extra_css: [assets/css/extra.css]
 
