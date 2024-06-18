@@ -55,9 +55,9 @@ type MyAwaited<T> = T extends PromiseLike<infer U> ? MyAwaited<U> : T;
 
 在這段代碼中：
 
-`PromiseLike<any>` 是 TypeScript 中的一個內建型別，它代表了具有類似 `Promise` 行為的物件，也就是說，這個物件具有 `then` 方法。使用 `PromiseLike<any>` 可以讓我們更通用地處理 `Promise` 及其類似的物件。
+1. `PromiseLike<any>` 是 TypeScript 中的一個內建型別，它代表了具有類似 `Promise` 行為的物件，也就是說，這個物件具有 `then` 方法。使用 `PromiseLike<any>` 可以讓我們更通用地處理 `Promise` 及其類似的物件。
 
-1. `T extends PromiseLike<infer U>`：
+2. `T extends PromiseLike<infer U>`：
 
     - 檢查：
 
@@ -71,7 +71,7 @@ type MyAwaited<T> = T extends PromiseLike<infer U> ? MyAwaited<U> : T;
         - 這意味著 `U` 是 `PromiseLike<T>` 的內部型別。
         - 如果 `T` 是 `PromiseLike`，則推斷出內部型別 `U`，並遞歸應用 `MyAwaited`。
 
-這樣，我們就完成了一個可以從 `Promise` 中提取內部型別的泛型型別 `MyAwaited<T>`。
+這樣，我們就完成了一個可以從 `PromiseLike` 中提取內部型別的泛型型別 `MyAwaited<T>`。
 
 ---
 
