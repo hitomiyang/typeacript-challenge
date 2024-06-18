@@ -75,7 +75,7 @@ type MyAwaited<T> = T extends PromiseLike<infer U> ? MyAwaited<U> : T;
 
 ---
 
-#### 補充說明
+<!-- #### 補充說明
 
 `T` 是 `Promise<string>`
 
@@ -134,4 +134,5 @@ type D = Awaited<boolean | Promise<Promise<string>>>;
 ```
 
 可以返回 `Promise` 內的 `Promise` 的 `type` 類型。
+ -->
 
