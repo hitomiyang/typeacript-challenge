@@ -71,7 +71,7 @@ markdown_extensions:
           permalink: true
           baselevel: 3
           # 目錄顯示的等級範圍
-          toc_depth: 3
+          toc_depth: 5
     - tables
     - pymdownx.highlight:
           anchor_linenums: true
