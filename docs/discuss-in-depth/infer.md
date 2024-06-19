@@ -1,6 +1,6 @@
 -   在 TypeScript 中，`infer` 是一個關鍵字，用於在條件型別（Conditional Types）中引入型別推斷（Type Inference）。
--   `infer` 允許我們在條件型別的 `true` 分支中推斷出某個型別，並將其賦值給一個型別變數。這在處理複雜的型別轉換和提取時特別有用。
--   當我們使用 `infer` 時，它會在條件型別中推斷出一個型別並賦值給一個變數。這個過程同時進行，類似於**邊宣告邊賦值**。
+-   `infer` 允許我們在條件型別的 `true` 分支中推斷出某個型別，並將其賦值給一個型別變數。
+-   當我們使用 `infer` 時，它會在條件型別中推斷出一個型別並賦值給一個變數。這個過程同時進行，類似於**_邊宣告邊賦值_**。
 
 # 運作順序
 
@@ -17,6 +17,7 @@
 
     - 根據條件的成立與否，條件型別會返回不同的結果。
     - 當條件成立時，返回推斷出的型別；當條件不成立時，返回另一個指定的型別（通常是 `never`）。
+    - 簡單化，動態化，變數化。
 
 ---
 
@@ -30,13 +31,22 @@ type GetReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
 
 -   條件型別：
 
-    `T extends (...args: any[]) => infer R`：檢查 `T` 是否是一個函數。
-    `infer R`：如果 `T` 是函數型別，則推斷出返回值型別並賦值給 `R`。
+    -   `T extends (...args: any[]) => infer R`：檢查 `T` 是否是一個函數。
+    -   `infer R`：如果 `T` 是函數型別，則推斷出返回值型別並賦值給 `R`。
+
+        ??? info "延伸閱讀"
+
+            `(...args: any[])` 是 TypeScript 中的函數型別描述符，表示這個函數可以接受任意數量、任意類型的參數。這樣的寫法允許我們不關心具體的參數，只關心函數的返回值型別。以下是對這段代碼的詳細解釋：
+
+            `(...args: any[])` 表示一個接受任意數量、任意類型參數的函數，並會收集到一個 `any` 陣列中。
+
+            -   `...args` 是剩餘參數語法，表示這個函數可以接受零個或多個參數。
+            -   `any[]` 表示這些參數組成一個陣列，並且陣列中的每個元素可以是任意類型。
 
 -   返回型別：
 
-    如果 `T` 是函數，則返回 `R`（函數的返回值型別）。
-    否則，返回 `never`。
+    -   如果 `T` 是函數，則返回 `R`（函數的返回值型別）。
+    -   否則，返回 `never`。
 
 ## 範例
 
@@ -45,7 +55,13 @@ type Example = (a: number, b: string) => boolean;
 type Result = GetReturnType<Example>; // 結果是 boolean
 ```
 
-在這個例子中，`GetReturnType<Example>` 將推斷出 `boolean`，因為 `Example` 函數的返回值型別是 `boolean`。
+在這個例子中：
+
+1. `Example` 是一個函數型別，它接受兩個參數：一個 `number` 和一個 `string`，並返回一個 `boolean`。
+2. `GetReturnType<Example>` 檢查 `Example` 是否符合 `(...args: any[]) => infer R` 的模式。
+    - 是的，`Example` 符合這個模式，因為它是一個函數型別。
+3. `infer R` 推斷出 `Example` 的返回值型別 `boolean`，並將其賦值給 `R`。
+4. 因此，`GetReturnType<Example>` 的結果是 `boolean`。
 
 ---
 
