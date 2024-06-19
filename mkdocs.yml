@@ -32,9 +32,19 @@ theme:
         - navigation.expand
         # 設定錨點追蹤
         - navigation.tracking
-        - navigation.tabs
-        #- navigation.sections
+
+        # 大分類顯示在header tabs
+        #- navigation.tabs
+
+        # tabs always 顯示
+        #- navigation.tabs.sticky
+
+        # 沒有顯示tabs時適用，選單會換成 groups 形式呈現
+        - navigation.sections
+
         #- toc.follow
+
+        # sidebar 顯示邊線
         - toc.integrate
 
 extra:
@@ -57,9 +67,11 @@ markdown_extensions:
     - attr_list
     - md_in_html
     - toc:
+          # 自動產生目錄及錨點
           permalink: true
           baselevel: 3
-          toc_depth: 4
+          # 目錄顯示的等級範圍
+          toc_depth: 3
     - tables
     - pymdownx.highlight:
           anchor_linenums: true
@@ -91,14 +103,15 @@ markdown_extensions:
 
 nav:
     - About: index.md
-    - Easy:
-          - Pick: easy/pick.md
-          - Readonly: easy/readonly.md
-          - Tuple to Object: easy/tupleToObject.md
-          - First of Array: easy/firstOfArray.md
-          - Length of Tuple: easy/lengthOfTuple.md
-          - Exclude: easy/exclude.md
-          - Awaited: easy/awaited.md
+    - TypeChallenge:
+          - Easy:
+                - Pick: easy/pick.md
+                - Readonly: easy/readonly.md
+                - Tuple to Object: easy/tupleToObject.md
+                - First of Array: easy/firstOfArray.md
+                - Length of Tuple: easy/lengthOfTuple.md
+                - Exclude: easy/exclude.md
+                - Awaited: easy/awaited.md
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
