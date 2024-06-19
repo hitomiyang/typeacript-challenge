@@ -99,8 +99,8 @@ nav:
           - Length of Tuple: easy/lengthOfTuple.md
           - Exclude: easy/exclude.md
           - Awaited: easy/awaited.md
-    - Discuss in Depth:
-          - Infer: discuss-in-depth/infer.md
-          - Promise 相關: discuss-in-depth/promise.md
+    - Dive Deep:
+          - Infer: dive-deep/infer.md
+          - Promise 相關: dive-deep/promise.md
 extra_css: [assets/css/extra.css]
 
