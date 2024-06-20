@@ -112,6 +112,7 @@ nav:
                 - Length of Tuple: easy/lengthOfTuple.md
                 - Exclude: easy/exclude.md
                 - Awaited: easy/awaited.md
+                - If: easy/if.md
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
