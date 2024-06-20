@@ -115,5 +115,6 @@ nav:
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
+          - Extends: dive-deep/extends.md
 extra_css: [assets/css/extra.css]
 
