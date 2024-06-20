@@ -87,7 +87,7 @@ type MyAwaited<T> = T extends PromiseLike<infer U> ? MyAwaited<U> : T;
 
 ---
 
-#### 補充說明
+### 補充說明
 
 `T` 是 `Promise<string>`
 
@@ -106,7 +106,7 @@ type Result = MyAwaited<ExampleType>; // 預期結果是 string
 
 ---
 
-#### 補充說明 2
+### 補充說明 2
 
 `T` 是 `Promise<Promise<string>>`
 

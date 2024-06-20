@@ -64,7 +64,7 @@ type TupleToObject<T extends readonly any[]> = {
 
 ---
 
-#### 補充說明
+### 補充說明
 
 ```typescript
 const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;
