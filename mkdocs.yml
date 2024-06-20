@@ -34,17 +34,17 @@ theme:
         - navigation.tracking
 
         # 大分類顯示在header tabs
-        #- navigation.tabs
+        - navigation.tabs
 
         # tabs always 顯示
-        #- navigation.tabs.sticky
+        - navigation.tabs.sticky
 
         # 沒有顯示tabs時適用，選單會換成 groups 形式呈現
-        - navigation.sections
+        #- navigation.sections
 
         #- toc.follow
 
-        # sidebar 顯示邊線
+        # sidebar 文章章節放到sidebar內
         - toc.integrate
 
 extra:
@@ -71,7 +71,7 @@ markdown_extensions:
           permalink: true
           baselevel: 3
           # 目錄顯示的等級範圍
-          toc_depth: 5
+          toc_depth: 6
     - tables
     - pymdownx.highlight:
           anchor_linenums: true
@@ -113,6 +113,7 @@ nav:
                 - Exclude: easy/exclude.md
                 - Awaited: easy/awaited.md
                 - If: easy/if.md
+                - Concat: easy/concat.md
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
