@@ -1,6 +1,6 @@
 # Challenge 00268
 
-`If`
+`If<C, T, F>`
 
 [Link](https://github.com/type-challenges/type-challenges/blob/main/questions/00268-easy-if/README.md) | [Take the Challenge](https://tsch.js.org/1268/play)
 
