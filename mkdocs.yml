@@ -114,6 +114,7 @@ nav:
                 - Awaited: easy/awaited.md
                 - If: easy/if.md
                 - Concat: easy/concat.md
+                - Includes: easy/includes.md
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
