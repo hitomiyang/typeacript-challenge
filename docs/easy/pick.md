@@ -72,8 +72,8 @@ type MyPick<T, K extends keyof T> = {
 
 6. `T[P]` 代表 `T` 中屬性 `P` 的型別：
 
-    - 當 P 等於 'title' 時，`T['title']` 是 string。
-    - 當 P 等於 'completed' 時，`T['completed']` 是 boolean。
+    - 當 `P` 等於 'title' 時，`T['title']` 是 `string`。
+    - 當 `P` 等於 'completed' 時，`T['completed']` 是 `boolean`。
 
 7. 這個新的型別包含 `K` 中的屬性鍵以及它們在 `T` 中對應的型別。
 
