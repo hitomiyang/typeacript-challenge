@@ -1,0 +1,42 @@
+# Challenge 03057
+
+`Push`
+
+[Link](https://github.com/type-challenges/type-challenges/blob/main/questions/03057-easy-push/README.md) | [Take the Challenge](https://tsch.js.org/3057/play)
+
+## 題目
+
+Implement the generic version of `Array.push`
+
+這道題目要求我們在型別系統中實現 JavaScript 的 `Array.push` 函數。這個型別需要接受兩個參數，第一個參數是陣列，第二個參數是要被添加到陣列末尾的元素。最終結果應該是一個新陣列，包含原始陣列的所有元素以及新添加的元素。
+
+## 範例
+
+```typescript
+type Result = Push<[1, 2], '3'>; // 預期結果是 [1, 2, '3']
+```
+
+---
+
+## 會用到的技術
+
+1. 泛型（Generics）：泛型讓我們可以針對不同的型別進行操作。
+2. 元組型別（Tuple Types）：我們需要處理的是元組型別，並且將新元素添加到元組末尾。
+3. 展開運算符（Spread Operator）：在型別系統中，我們可以使用展開運算符來合併元組。
+
+## 解答
+
+```typescript
+type Push<T extends any[], U> = [...T, U];
+```
+
+在這段代碼中：
+
+我們使用了 TypeScript 的展開運算符來將原始陣列 `T` 的所有元素展開，並在末尾添加新元素 `U`。
+
+1. `type Push<T extends any[], U>`：定義一個泛型型別 `Push`，它接受兩個參數 `T` 和 `U`。
+2. `T extends any[]`：這表示 `T` 必須是一個陣列型別。
+3. `[...T, U]`：這是陣列展開語法，表示將 `T` 中的所有元素展開，並在末尾添加元素 `U`。
+
+這樣，我們就實現了一個可以將新元素添加到陣列末尾的工具型別 `Push`。
+
