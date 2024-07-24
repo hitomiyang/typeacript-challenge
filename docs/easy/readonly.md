@@ -63,13 +63,13 @@ type MyReadonly<T> = {
 
 在這段代碼中：
 
-1. `keyof T` 會產生 `T` 的所有屬性名稱的聯合型別（子集合）。
+1. 首先我們先找出所有 `T` 中的屬性 ，這裡使用 `keyof T` ，他會產生 `T` 的所有屬性名稱的聯合型別（子集合）。
     - `keyof` 是用來取得某個型別的所有屬性鍵，並返回這些鍵組成的聯合型別。
       例如，對於 `interface Todo { title: string; description: string; }`，`keyof Todo` 會產生聯合型別 `"title" | "description"`。
-2. `[P in keyof T]` 是在迭代 `T` 的所有屬性。
+2. 接著我們創建一個臨時變數 `P`，並使用 `[P in keyof T]` ，這是是在迭代 `T` 的所有屬性。也就是上面的聯合型別。
     - `in` 關鍵字用來遍歷某個型別的所有屬性。
-      在這個例子中，我們使用 `[P in keyof T]` 來遍歷型別 `T` 的所有屬性，`P` 代表每一個屬性鍵。
-3. `readonly` 關鍵字將每個屬性設為唯讀。
+      在這個例子中，我們使用 `[P in keyof T]` 來遍歷型別 `T` 的所有屬性，`P` 代表每一個屬性鍵。第一次是 'title'，第二次是 'description'。
+3. 使用`readonly` 關鍵字，將每個屬性設為唯讀。
 4. `T[P]` 表示 T 中屬性 P 的型別：
     - 當 `P` 等於 'title' 時，`T['title']` 是 `string`。
 
