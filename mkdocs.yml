@@ -116,6 +116,7 @@ nav:
                 - Concat: easy/concat.md
                 - Includes: easy/includes.md
                 - Push: easy/push.md
+                - Unshift: easy/unshift.md
     - Dive Deep:
           - Infer: dive-deep/infer.md
           - Promise 相關: dive-deep/promise.md
